@@ -7,7 +7,7 @@
         start: ['parent', 'start', 16]
       },
       my_divider: {
-        start: ['parent', 'start', 64],
+        start: ['parent', 'start', 138],
         end: ['parent', 'end']
       }
     },
@@ -19,7 +19,23 @@
       },
       my_divider: {
         start: ['parent', 'start'],
-        end: ['parent', 'end', 64]
+        end: ['parent', 'end', 138]
+      }
+    }
+  },
+  Transitions: {
+    default: {
+      from: 'start',
+      to: 'end',
+      pathMotionArc: 'startHorizontal',
+      KeyFrames: {
+        KeyAttributes: [
+          {
+            target: ['my_image'],
+            frames: [0, 50, 100],
+            translationY: [0, -200, 0]
+          }
+        ]
       }
     }
   }
