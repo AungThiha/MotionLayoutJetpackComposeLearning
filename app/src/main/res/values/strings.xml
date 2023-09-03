@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MotionLayoutJetpackCompose</string>
     <string name="app_icon">app icon</string>
+    <string name="text_compose">text\n</string>
 </resources>

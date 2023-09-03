@@ -9,6 +9,13 @@
       my_divider: {
         start: ['parent', 'start', 138],
         end: ['parent', 'end']
+      },
+      my_text: {
+        start: ['my_divider', 'start'],
+        bottom: ['my_divider', 'top', 16],
+        custom: {
+          textColor: '#71d88c'
+        },
       }
     },
     end: {
@@ -20,7 +27,14 @@
       my_divider: {
         start: ['parent', 'start'],
         end: ['parent', 'end', 138]
-      }
+      },
+      my_text: {
+        end: ['my_divider', 'end'],
+        top: ['my_divider', 'bottom', 16],
+        custom: {
+          textColor: '#5185ec'
+        },
+      },
     }
   },
   Transitions: {
@@ -32,8 +46,10 @@
         KeyAttributes: [
           {
             target: ['my_image'],
-            frames: [0, 50, 100],
-            translationY: [0, -200, 0]
+            frames: [0, 5, 50, 95, 100],
+            translationY: [0, -50, -200, -50, 0],
+            scaleX: [1, 1, 2, 1, 1],
+            scaleY: [1, 1, 2, 1, 1]
           }
         ]
       }

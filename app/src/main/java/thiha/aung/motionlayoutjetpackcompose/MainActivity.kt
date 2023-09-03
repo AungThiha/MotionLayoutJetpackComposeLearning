@@ -28,9 +28,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ExperimentalMotionApi
 import androidx.constraintlayout.compose.MotionLayout
+import androidx.constraintlayout.compose.MotionLayoutDebugFlags
 import androidx.constraintlayout.compose.MotionScene
 import androidx.constraintlayout.compose.layoutId
 import thiha.aung.motionlayoutjetpackcompose.ui.theme.MotionLayoutJetpackComposeTheme
+import java.util.EnumSet
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,7 +62,6 @@ class MainActivity : ComponentActivity() {
                                 .padding(horizontal = 32.dp)
                         )
                     }
-
                 }
             }
         }
@@ -82,7 +83,9 @@ fun MotionLayoutSample(progress: Float) {
         progress = progress,
         modifier = Modifier
             .fillMaxWidth(),
+//        debug = EnumSet.of(MotionLayoutDebugFlags.SHOW_ALL)
     ) {
+        val properties = motionProperties(id = "my_text")
         Image(
             painter = painterResource(
                 id = R.drawable.ic_launcher_foreground
@@ -96,6 +99,12 @@ fun MotionLayoutSample(progress: Float) {
             thickness = 2.dp,
             modifier = Modifier
                 .layoutId("my_divider")
+        )
+        Text(
+            text = stringResource(R.string.text_compose),
+            color = properties.value.color("textColor"),
+            modifier = Modifier
+                .layoutId("my_text")
         )
     }
 }
